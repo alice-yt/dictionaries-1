@@ -1,7 +1,12 @@
+# import test.txt
 
 def counts_words(file):
-    open(file)      #opens file
+    open_file = open(file)      #opens file
     word_count = {} #dictionary with words and their count
-    for letter in file:
-        word_count[letter] = word_count.get(letter, 0) + 1   
+    for line in open_file:
+        for word in line:
+            word_count[word] = word_count.get(word, 0) + 1   
+    print(word_count)
     return word_count
+
+counts_words('test.txt')
